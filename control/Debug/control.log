@@ -1,0 +1,38 @@
+﻿生成启动时间为 2015/3/24 17:53:48。
+     1>项目“D:\gitproject\NetServicer\control\control.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>_PrepareForClean:
+         正在删除文件“Debug\control.lastbuildstate”。
+       PrepareForBuild:
+         正在创建目录“D:\gitproject\NetServicer\control\Win32\Debug\”。
+       InitializeBuildStatus:
+         正在创建“Debug\control.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       CustomBuild:
+         Moc'ing control.h...
+         Uic'ing control.ui...
+         Rcc'ing control.qrc...
+     1>RCC : warning : No resources in 'D:\gitproject\NetServicer\control\control.qrc'.
+         
+       ClCompile:
+         e:\soft\vs2010\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /IE:\soft\qt5\5.2.1\msvc2010\include /I.\GeneratedFiles\Debug /IE:\soft\qt5\5.2.1\msvc2010\include\QtCore /IE:\soft\qt5\5.2.1\msvc2010\include\QtGui /IE:\soft\qt5\5.2.1\msvc2010\include\QtWidgets /Zi /nologo /W1 /WX- /Od /Oy- /D UNICODE /D WIN32 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt control.cpp GeneratedFiles\Debug\moc_control.cpp main.cpp
+         control.cpp
+         moc_control.cpp
+         main.cpp
+         正在生成代码...
+         e:\soft\vs2010\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /IE:\soft\qt5\5.2.1\msvc2010\include /I.\GeneratedFiles\Debug /IE:\soft\qt5\5.2.1\msvc2010\include\QtCore /IE:\soft\qt5\5.2.1\msvc2010\include\QtGui /IE:\soft\qt5\5.2.1\msvc2010\include\QtWidgets /Zi /nologo /W1 /WX- /Od /Oy- /D UNICODE /D WIN32 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt GeneratedFiles\qrc_control.cpp
+         qrc_control.cpp
+       Link:
+         e:\soft\vs2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\gitproject\NetServicer\control\Win32\Debug\\control.exe" /NOLOGO /LIBPATH:E:\soft\qt5\5.2.1\msvc2010\lib qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5Widgetsd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\control.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\gitproject\NetServicer\control\Win32\Debug\control.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\gitproject\NetServicer\control\Win32\Debug\control.lib" /MACHINE:X86 Debug\control.obj
+         Debug\moc_control.obj
+         Debug\qrc_control.obj
+         Debug\main.obj
+         control.vcxproj -> D:\gitproject\NetServicer\control\Win32\Debug\control.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\gitproject\NetServicer\control\Win32\Debug\\control.exe;#1" /manifest Debug\control.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         正在删除文件“Debug\control.unsuccessfulbuild”。
+         正在对“Debug\control.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“D:\gitproject\NetServicer\control\control.vcxproj”(rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:10.76
