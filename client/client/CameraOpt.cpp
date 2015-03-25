@@ -4,7 +4,7 @@
 #include "opencv2/opencv.hpp"
 
 
-DWORD WINAPI TestThreadProc(LPVOID lpParameter)
+DWORD WINAPI ThreadCapture(LPVOID lpParameter)
 {
 	CCameraOpt* opt= (CCameraOpt*)lpParameter;
 	return opt->run();
@@ -16,14 +16,17 @@ CCameraOpt::CCameraOpt(void)
 	,m_hd(NULL)
 	,m_hDemaphore(NULL)
 {
+	 InitializeCriticalSection(&m_cs);
 }
 
 CCameraOpt::~CCameraOpt(void)
 {
+	DeleteCriticalSection(&m_cs);
 }
 
 IplImage* CCameraOpt::GetImage()
 {
+
 	EnterCriticalSection(&m_cs);
 	IplImage* pImage = NULL;
 	if (m_pFrame)
@@ -50,6 +53,7 @@ DWORD CCameraOpt::run()
 		EnterCriticalSection(&m_cs);
 		m_pFrame = cvQueryFrame( pCapture ); 
 		LeaveCriticalSection(&m_cs);
+	
 		if(!m_pFrame)break;  
 	}  
 	cvReleaseCapture(&pCapture);  
@@ -59,7 +63,7 @@ DWORD CCameraOpt::run()
 int CCameraOpt::CreateThread()
 {
 	int nRet = 0;
-	m_hd = ::CreateThread(NULL,0,TestThreadProc,this,0,NULL);
+	m_hd = ::CreateThread(NULL,0,ThreadCapture,this,0,NULL);
 	if (m_hd == NULL)
 	{
 		nRet = -1;

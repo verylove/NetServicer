@@ -2,32 +2,23 @@
 //
 
 #include "stdafx.h"
-#include "CameraOpt.h"
-#include "opencv2/highgui/highgui.hpp"
-#include "opencv2/opencv.hpp"
+#include "CommunicationOpt.h"
 int _tmain(int argc, _TCHAR* argv[])
 {
-	CCameraOpt* opt = new CCameraOpt;
-	int nRet = opt->CreateThread();
-		cvNamedWindow("video", 1);
-	if (nRet == 0)
+	CCommunicationOpt* opt = new CCommunicationOpt();
+	if (opt->Start() == 0)
 	{
-		while (1)
+		while(1)
 		{
-			IplImage* pImage = opt->GetImage();
-			if (pImage)
-			{
-				std::cout<<"正在显示图片"<<std::endl;
-				cvShowImage("video",pImage);
-				cvSaveImage("D:\\1.jpg",pImage);
-				std::cout<<"显示图片完成"<<std::endl;
-				cvReleaseImage(&pImage);
-			}
+			char  szbuf[256] = {0} ;
+			std::cin>>szbuf;
+			opt->Send(szbuf,256);
 		}
-
 	}
 
-	system("PAUSE"); 
+
+	
+	//system("PAUSE"); 
 	return 0;
 }
 

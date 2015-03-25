@@ -1,9 +1,9 @@
-﻿生成启动时间为 2015/3/24 19:57:07。
+﻿生成启动时间为 2015/3/25 16:28:30。
      1>项目“D:\gitproject\NetServicer\client\client\client.vcxproj”在节点 2 上(rebuild 个目标)。
      1>_PrepareForClean:
          正在删除文件“Debug\client.lastbuildstate”。
        InitializeBuildStatus:
-         正在对“Debug\client.unsuccessfulbuild”执行 Touch 任务。
+         正在创建“Debug\client.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
          e:\soft\vs2010\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\client.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
          stdafx.cpp
@@ -12,8 +12,6 @@
          DiskFileOpt.cpp
          CommunicationOpt.cpp
          client.cpp
-     1>d:\gitproject\netservicer\3rdparty\libopencv\include\opencv2\flann\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 e:\soft\vs2010\vc\include\stdio.h(234) : 参见“fopen”的声明
          CameraOpt.cpp
      1>d:\gitproject\netservicer\3rdparty\libopencv\include\opencv2\flann\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  e:\soft\vs2010\vc\include\stdio.h(234) : 参见“fopen”的声明
@@ -48,4 +46,4 @@
 
 生成成功。
 
-已用时间 00:00:04.56
+已用时间 00:00:05.11
