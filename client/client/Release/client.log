@@ -1,0 +1,25 @@
+﻿生成启动时间为 2015/3/27 11:21:13。
+     1>项目“D:\gitproject\NetServicer\client\client\client.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>PrepareForBuild:
+         正在创建目录“D:\gitproject\NetServicer\client\Release\”。
+       InitializeBuildStatus:
+         正在创建“Release\client.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         e:\soft\vs2010\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Release\client.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         e:\soft\vs2010\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\client.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt CameraOpt.cpp client.cpp CommunicationOpt.cpp DiskFileOpt.cpp EventOpt.cpp TaskOpt.cpp
+         CameraOpt.cpp
+     1>d:\gitproject\netservicer\client\client\CameraOpt.h(2): fatal error C1083: 无法打开包括文件:“opencv/cv.h”: No such file or directory
+         client.cpp
+         CommunicationOpt.cpp
+         DiskFileOpt.cpp
+         EventOpt.cpp
+         TaskOpt.cpp
+     1>TaskOpt.cpp(24): warning C4018: “<”: 有符号/无符号不匹配
+     1>TaskOpt.cpp(42): warning C4805: “!=”: 在操作中将类型“BOOL”与类型“bool”混合不安全
+     1>TaskOpt.cpp(50): warning C4018: “<”: 有符号/无符号不匹配
+     1>已完成生成项目“D:\gitproject\NetServicer\client\client\client.vcxproj”(rebuild 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:23.89

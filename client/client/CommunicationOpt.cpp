@@ -10,12 +10,14 @@ DWORD WINAPI ThreadRecv(LPVOID lpParameter)
 
 CCommunicationOpt::CCommunicationOpt(void)
 {
+	InitializeCriticalSection(&m_cs);
 }
 
 
 CCommunicationOpt::~CCommunicationOpt(void)
 {
 	CloseSocket();
+	DeleteCriticalSection(&m_cs);
 }
 
 int CCommunicationOpt::CreateSocket()
@@ -81,8 +83,13 @@ DWORD CCommunicationOpt::RecvMsg()
 {
 	while (true)
 	{
-		char recvBuf[nMax_Recv] =  {0};
-		recv(m_st,recvBuf,nMax_Recv,0);
-		std::cout<<recvBuf<<std::endl;
+		char* p = NULL;
+		recv(m_st,p,sizeof(MsgInfo),0);
+		MsgInfo msg;
+		memcpy(&msg,p,sizeof(MsgInfo));
+
+		EnterCriticalSection(&m_cs);
+		m_ListInfo.push_back(msg);
+		LeaveCriticalSection(&m_cs);
 	}
 }

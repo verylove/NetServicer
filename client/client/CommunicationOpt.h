@@ -1,9 +1,8 @@
 #pragma once
 #include <Winsock2.h>
-#include <string.h>
-#include <iostream>
-//封装了通信的一些操作
+#include "TypeDef.h"
 
+//封装了通信的一些操作
 class CCommunicationOpt
 {
 public:
@@ -24,6 +23,7 @@ private:
 	SOCKET m_st;		
 	HANDLE m_hdRecv;	//接收线程句柄
 	static const int nMax_Recv = 1024;
-
+	listInfo m_ListInfo;
+	CRITICAL_SECTION m_cs;
 };
 

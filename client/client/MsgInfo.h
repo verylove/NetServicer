@@ -4,15 +4,15 @@
 //定义发送消息格式
 enum enControlType
 {
-	en_MSG_DiskFile,	//获取指定盘符的文件列表
-	en_MSG_PathFile,	//获取指定路径的文件列表
-	en_MSG_File,		//获取制定文件
-	en_MSG_OpenCmaera,	//打开摄像头
-	en_MSG_CloseCmaera,	//关闭摄像头
-	en_MSG_OpenProgram,	//打开指定程序
-	en_MSG_ClosePorgram,//关闭指定程序
-	en_MSG_TaskManager,	//获取任务管理器列表
-	en_MSG_Win,			//windows键
+	en_MSG_DiskFile,		//获取指定盘符的文件列表
+	en_MSG_PathFile,		//获取指定路径的文件列表
+	en_MSG_File,			//获取制定文件
+	en_MSG_OpenCmaera,		//打开摄像头
+	en_MSG_CloseCmaera,		//关闭摄像头
+	en_MSG_OpenProgram,		//打开指定程序
+	en_MSG_ClosePorgram,	//关闭指定程序
+	en_MSG_TaskManager,		//获取任务管理器列表
+	en_MSG_Win,				//windows键
 	en_MSG_ESC,			
 	en_MSG_Q,
 	en_MSG_W,
@@ -73,8 +73,10 @@ enum enControlType
 	en_MSG_MOUSE_LEFT,		//鼠标按键
 	en_MSG_MOUSE_RIGHT,
 	en_MSG_MOUSE_MINDLE,
+	en_MSG_InputKey,		//获取输入按键
 	en_MSG_Inval
 };
+
 struct MsgInfo 
 {
 	enControlType enType;	//操作类型
@@ -87,14 +89,14 @@ struct MsgInfo
 	bool bFinish;			//消息全部是否发送
 	MsgInfo()
 	{
-		enType = en_MSG_Inval;	//操作类型
-		nSendSocket = -1;		//发送端socket id
-		nRecvSocket = -1;		//接收端socket id
-		strSendName[64] = {0};	//发送端名称
-		strRecvName[64] = {0};	//接收端名称
-		strMsg[512] = {0};		//发送消息
-		strContext[128] = {0};	//附加消息
-		bFinish = true;			//消息全部是否发送
+		enType = en_MSG_Inval;
+		nSendSocket = -1;	
+		nRecvSocket = -1;
+		strSendName[0] = '\0';
+		strRecvName[0] = '\0';
+		strMsg[0] = '\0';
+		strContext[0] = '\0';
+		bFinish = true;	
 	}
 };
 

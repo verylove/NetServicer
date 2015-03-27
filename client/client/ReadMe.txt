@@ -39,5 +39,20 @@ StdAfx.h，StdAfx.cpp
 /////////////////////////////////////////////////////////////////////////////
 工程结构说明：
 
+问题：
+1.进程可以获取，但是不可以关闭(问题解决：原因是对进程的操作权限不够)
+
+2.可以获取用户的按键，但是关于windows的窗体按键，钩子函数会导致窗体未响应
+	（建议只在调试时使用全局HOOK函数。全局HOOK函数将降低系统效率，并且会同其它使用该类HOOK的应用程序产生冲突。  ）
+	可以获取制定进程的id，然后监听该进程的输入
+	使用方式：
+	HINSTANCE his = LoadLibraryA("HookDll.dll");                    //用于加载dll
+	typedef int(*Start)(int nCode,HANDLE hd);    
+	typedef int(*End)();  
+	Start st=(Start)GetProcAddress(his, "startHook");                  //GetProcAddress()用于获得函数地址
+	st(0,hd);
+	End en = (End)GetProcAddress(his, "endHook");					//GetProcAddress()用于获得函数地址
+	en();
+	FreeLibrary(his);                                                   //释放dll
 
 /////////////////////////////////////////////////////////////////////////////

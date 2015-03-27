@@ -1,6 +1,6 @@
 #pragma once
 #include "opencv/cv.h"
-#include<windows.h> 
+#include "TypeDef.h"
 //相机操作（摄像头操作）
 class CCameraOpt
 {
