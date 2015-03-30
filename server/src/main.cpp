@@ -12,9 +12,28 @@
 
 #define MAXLINE 4096
 typedef std::map<int,int> mapUser; //连接的用户 int： connectId， threadID
-vtUser userList;
+mapUser userList;
 
-void Send(int nSocket,void* Data)
+//用户退出，删除用户
+int DeleteUser(void* pData)
+{
+	MsgInfo* pInfo = (MsgInfo*)pData;
+	if (pInfo)
+	{
+		std::map<int,int>::iterator iter = userList.find(pInfo->nRecvSocket);
+		if (iter != userList.end())
+		{
+			close(iter->first);
+			close()
+			userList.erase(iter);
+			iter->first
+		}
+	}
+
+}
+
+//发送/转发消息
+void Send(int nSocket,void* pData)
 {
 
 }
