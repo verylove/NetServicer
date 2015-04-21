@@ -28,7 +28,14 @@ int ServerManager::Close()
 //restart
 int ServerManager::Restart()
 {
-
+	if (m_wddSocket!=NULL)
+	{
+		m_wddSocket->CloseSocket();
+		delete m_wddSocket;
+		m_wddSocket = NULL;
+	}
+	close(m_recvthread);
+	InitSocket();
 }
 
 
